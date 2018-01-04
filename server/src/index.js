@@ -1,6 +1,7 @@
 import express from 'express'
 
 import config from './config'
+import router from './router'
 
 let _server
 
@@ -9,6 +10,7 @@ const server = {
     const app = express()
 
     config(app)
+    router(app)
 
     _server = app.listen('9000', () => {
       const address = _server.address()
