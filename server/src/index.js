@@ -5,7 +5,7 @@ import config from './config'
 let _server
 
 const server = {
-  start() {
+  start () {
     const app = express()
 
     config(app)
@@ -23,7 +23,7 @@ const server = {
 
     return _server
   },
-  close() {
+  close () {
     _server.close()
   }
 }
