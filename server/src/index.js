@@ -2,6 +2,7 @@ import express from 'express'
 
 import config from './config'
 import router from './router'
+import db from './database'
 
 let _server
 
@@ -9,21 +10,24 @@ const server = {
   start () {
     const app = express()
 
-    config(app)
-    router(app)
+    return db.connect()
+      .then(() => {
+        config(app)
+        router(app)
 
-    _server = app.listen('9000', () => {
-      const address = _server.address()
-      const host = address.address === '::'
-        ? 'localhost'
-        : address
+        _server = app.listen('9000', () => {
+          const address = _server.address()
+          const host = address.address === '::'
+            ? 'localhost'
+            : address
 
-      const port = '9000'
+          const port = '9000'
 
-      console.log(`Server opened listen on http://${host}:${port}`)
-    })
+          console.log(`Server opened listen on http://${host}:${port}`)
+        })
 
-    return _server
+        return _server
+      })
   },
   close () {
     _server.close()

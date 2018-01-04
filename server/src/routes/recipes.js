@@ -5,7 +5,7 @@ import RecipesController from '../controllers/recipes'
 const router = express.Router()
 
 router.route('/')
-  .get(RecipesController.recipe)
+  .get(RecipesController.recipes)
   .post(RecipesController.addRecipe)
 
 router.route('/:id')
