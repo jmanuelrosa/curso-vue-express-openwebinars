@@ -5,13 +5,13 @@ class RecipesController {
       .json({ key: 'value' })
   }
 
-  addRecipe(req, res, next) {
+  addRecipe (req, res, next) {
     return res
       .status(201)
       .json({ key: 'value post' })
   }
 
-  editRecipeById(req, res, next) {
+  editRecipeById (req, res, next) {
     return res
       .status(201)
       .json({ key: `put ${req.params.id}` })
