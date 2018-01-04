@@ -1,19 +1,13 @@
 import express from 'express'
 
+import RecipesController from '../controllers/recipes'
+
 const router = express.Router()
 
-router
-  .get('/', (req, res, next) => {
-    res
-      .status(200)
-      .json({ key: 'value' })
-  })
+router.route('/')
+  .get(RecipesController.recipe)
 
-router
-  .get('/:id', (req, res, next) => {
-    res
-      .status(200)
-      .json({ id: req.params.id })
-  })
+router.route('/:id')
+  .get(RecipesController.recipeById)
 
 export default router
