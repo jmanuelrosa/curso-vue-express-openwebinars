@@ -16,6 +16,9 @@
         <h2>Listado con todas nuestras recetas.</h2>
       </div>
     </div>
+    <div class='ui container vertical segment stripe'>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
