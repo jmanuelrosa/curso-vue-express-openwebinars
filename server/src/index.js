@@ -6,7 +6,7 @@ import router from './router'
 let _server
 
 const server = {
-  start() {
+  start () {
     const app = express()
 
     config(app)
@@ -25,7 +25,7 @@ const server = {
 
     return _server
   },
-  close() {
+  close () {
     _server.close()
   }
 }
