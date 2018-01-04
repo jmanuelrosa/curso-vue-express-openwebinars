@@ -6,8 +6,10 @@ const router = express.Router()
 
 router.route('/')
   .get(RecipesController.recipe)
+  .post(RecipesController.addRecipe)
 
 router.route('/:id')
   .get(RecipesController.recipeById)
+  .put(RecipesController.editRecipeById)
 
 export default router
