@@ -1,9 +1,9 @@
 import jwt from 'jwt-simple'
 
 export default (req, res, next) => {
-  if (!req.headers.authorization) {
+  if (!req.headers.authorization || req.headers.authorization === 'null') {
     return res
-      .status(403)
+      .status(401)
       .send({ message: 'No authenticate' })
   }
 
