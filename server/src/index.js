@@ -41,6 +41,6 @@ if (!module.parent) {
 }
 
 process.on('unhandledRejection', (err, p) => {
-  console.log('Custom Error: An unhandledRejection occurred')
+  console.log('Custom Error: An unhandledRejection oc∫curred')
   console.log(`Custom Error: Rejection: ${err}`)
 })
